@@ -1,0 +1,11 @@
+{
+  "name": "@128x64/workbench",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "$(npm bin)/webpack-serve --mode=development"
+  },
+  "devDependencies": {
+    "webpack": "^4.12.0",
+    "webpack-serve": "^1.0.4"
+  }
+}
