@@ -1,8 +1,12 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "$(npm bin)/jest --coverage"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
     "jest": "^23.1.0"
   }
 }
