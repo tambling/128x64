@@ -1,4 +1,5 @@
 {
+  "private": true,
   "scripts": {
     "test": "$(npm bin)/jest --coverage"
   },

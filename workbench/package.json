@@ -1,6 +1,5 @@
 {
-  "name": "@128x64/workbench",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "start": "$(npm bin)/webpack-serve --mode=development"
   },
