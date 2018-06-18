@@ -1,14 +1,17 @@
-import Bogo from '../../packages/cartridges/Bogo';
-import BrowserText from '../../packages/screens/BrowserText';
+import Static from '../../packages/cartridges/Static';
+import BrowserImageData from '../../packages/screens/BrowserImageData';
 
-const bogo = new Bogo()
-const screen = new BrowserText('field');
+const screen = new BrowserImageData('canvas')
 
-screen.render(bogo.toMatrix());
+const cartridge = new Static()
+
+screen.render(cartridge.toMatrix())
 
 const step = () => {
-  screen.render(bogo.toMatrix());
+  setTimeout(() => {
+  screen.render(cartridge.toMatrix())
   window.requestAnimationFrame(step);
+  }, 1000 / 30)
 }
 
 window.requestAnimationFrame(step);

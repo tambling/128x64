@@ -1,8 +1,8 @@
 class BrowserText {
-  constructor(selector, options = {}) {
-    this.selector = selector;
+  constructor(element, options = {}) {
+    this.element = element;
 
-    this.on = options.on || 'X';
+    this.on = options.on || '•';
     this.off = options.off || ' ';
   }
 
@@ -13,7 +13,7 @@ class BrowserText {
       ).join('')
     ).join('<br />')
 
-    document.getElementById(this.selector).innerHTML = content;
+    this.element.innerHTML = content;
   }
 }
 
