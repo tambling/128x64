@@ -1,3 +1,5 @@
+import { pixelOff, pixelOn } from './helpers';
+
 class BrowserImageData {
   constructor(selector) {
     this.canvas = document.getElementById(selector);
@@ -9,18 +11,10 @@ class BrowserImageData {
     const pixelArray = matrix.reduce((a, c) => a.concat(c));
 
     pixelArray.forEach((pixel, index) => {
-      const basePixel = index * 4;
-
-      this.imageData.data[basePixel] = 0;
-      this.imageData.data[basePixel + 1] = 0;
-      this.imageData.data[basePixel + 2] = 0;
-      this.imageData.data[basePixel + 3] = 255;
+      pixelOff(this.imageData, index);
 
       if (pixel) {
-        this.imageData.data[basePixel] = 255;
-        this.imageData.data[basePixel + 1] = 255;
-        this.imageData.data[basePixel + 2] = 255;
-        this.imageData.data[basePixel + 3] = 255;
+        pixelOn(this.imageData, index);
       }
     });
 
