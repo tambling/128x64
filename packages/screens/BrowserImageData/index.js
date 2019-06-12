@@ -1,24 +1,24 @@
+import Screen from '../../Screen';
 import { pixelOff, pixelOn } from './helpers';
 
-class BrowserImageData {
+class BrowserImageData extends Screen {
   constructor(selector) {
+    super();
+
     this.canvas = document.getElementById(selector);
     this.context  = this.canvas.getContext('2d');
     this.imageData = this.context.createImageData(128, 64);
   }
 
-  render(matrix) {
-    const pixelArray = matrix.reduce((a, c) => a.concat(c));
+  applyPixel(index, on) {
+    pixelOff(this.imageData, index);
 
-    pixelArray.forEach((pixel, index) => {
-      pixelOff(this.imageData, index);
+    if (on) {
+      pixelOn(this.imageData, index);
+    }
+  }
 
-      if (pixel) {
-        pixelOn(this.imageData, index);
-      }
-    });
-
-
+  putToScreen() {
     this.context.putImageData(this.imageData, 0, 0);
   }
 }

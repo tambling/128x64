@@ -14,7 +14,7 @@ class Bogo {
       }
     }
 
-    return matrix;
+    return Uint8Array.from(matrix.flat());
   }
 }
 
