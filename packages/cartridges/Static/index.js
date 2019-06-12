@@ -1,4 +1,4 @@
-class Bogo {
+class Static {
   computeNextState(input) {
     return this;
   }
@@ -18,4 +18,4 @@ class Bogo {
   }
 }
 
-export default Bogo;
+export default Static;
