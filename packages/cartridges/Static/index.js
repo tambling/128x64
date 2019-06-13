@@ -3,7 +3,7 @@ class Static {
     return this;
   }
 
-  toMatrix() {
+  toBuffer() {
     const matrix = [];
 
     for(let i = 0; i <= 63; i++) {

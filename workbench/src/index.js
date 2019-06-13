@@ -1,17 +1,14 @@
+import Console from '../../packages/Console';
 import Static from '../../packages/cartridges/Static';
 import BrowserImageData from '../../packages/screens/BrowserImageData';
 
 const screen = new BrowserImageData('canvas')
 
-const cartridge = new Static()
-
-screen.render(cartridge.toMatrix())
+const konsole = new Console({ screen })
 
 const step = () => {
-  setTimeout(() => {
-  screen.render(cartridge.toMatrix())
+  konsole.step();
   window.requestAnimationFrame(step);
-  }, 1000 / 30)
 }
 
 window.requestAnimationFrame(step);
