@@ -14,7 +14,7 @@ describe('new Matrix()', () => {
     const width = 1;
     const height = 1;
 
-    const matrix = new Matrix(rawData, width, height);
+    const matrix = new Matrix(width, height, rawData);
 
     expect(matrix.rawData).toBe(rawData);
     expect(matrix.width).toBe(1);
@@ -27,7 +27,7 @@ describe('new Matrix()', () => {
     const height = 2;
 
     expect(() => {
-      new Matrix(rawData, width, height);
+      new Matrix(width, height, rawData);
     }).toThrow(new DimensionMismatchError());
   });
 
@@ -39,7 +39,7 @@ describe('Matrix.getAt()', () => {
     const width = 2;
     const height = 2;
 
-    const matrix = new Matrix(rawData, width, height);
+    const matrix = new Matrix(width, height, rawData);
 
     expect(matrix.getAt(1, 1)).toBe('d');
   });
@@ -51,7 +51,7 @@ describe('Matrix.setAt()', () => {
     const width = 2;
     const height = 2;
 
-    const matrix = new Matrix(rawData, width, height);
+    const matrix = new Matrix(width, height, rawData);
 
     matrix.setAt(1, 1, 'e');
 
@@ -65,7 +65,7 @@ describe('Matrix.forEach()', () => {
     const width = 2;
     const height = 2;
 
-    const matrix = new Matrix(rawData, width, height);
+    const matrix = new Matrix(width, height, rawData);
     
     const f = jest.fn();
 
