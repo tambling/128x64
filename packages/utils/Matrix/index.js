@@ -2,7 +2,7 @@ import { getIndexFromXAndY, getXAndYFromIndex } from './helpers';
 import { DimensionMismatchError } from './errors';
 
 class Matrix {
-  constructor(rawData = [], width = 0, height = 0) {
+  constructor(width = 0, height = 0, rawData = []) {
     if ((width * height) !== rawData.length) {
       throw new DimensionMismatchError();
     }
